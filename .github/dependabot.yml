@@ -1,0 +1,38 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    versioning-strategy: increase
+    open-pull-requests-limit: 20
+    registries: "*"
+    pull-request-branch-name:
+      separator: "-"
+    schedule:
+      day: "saturday"
+      interval: "weekly"
+      time: "10:00"
+      timezone: "America/New_York"
+    groups:
+      react-related:
+        patterns:
+          - "react*"
+          - "@react*"
+  - package-ecosystem: "bundler"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "sunday"
+      time: "16:00"
+      timezone: "America/New_York"
+    pull-request-branch-name:
+      separator: "-"
+    versioning-strategy: increase
+    open-pull-requests-limit: 20
+    insecure-external-code-execution: deny
+    groups:
+      all:
+        patterns:
+          - "*"
+    allow:
+      - dependency-type: "direct"
+ 
